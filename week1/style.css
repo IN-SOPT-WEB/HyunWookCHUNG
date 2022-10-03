@@ -1,0 +1,23 @@
+header {
+    border: 1px solid rebeccapurple ;
+    /* background-color: aqua; */
+    height: 70px;
+    text-align: center;
+    display: block;
+}
+header h1{
+    font-weight: bold;
+    font-size: 2rem;
+    margin-top: 17px;
+}
+.nav{
+    border: 1px red solid;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    line-height: 3.1;
+}
+.nav button{
+    margin: 0 5px;
+    background-color: white;
+}
