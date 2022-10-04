@@ -1,6 +1,7 @@
+*{font-weight: bold;}
 header {
-    border: 1px solid rebeccapurple ;
-    /* background-color: aqua; */
+    border-bottom: 2px solid gray ;
+    
     height: 70px;
     text-align: center;
     display: block;
@@ -11,13 +12,29 @@ header h1{
     margin-top: 17px;
 }
 .nav{
-    border: 1px red solid;
-    height: 50px;
+    border-bottom: 2px grey solid;
+    height: 100px;
     display: flex;
     justify-content: center;
     line-height: 3.1;
 }
 .nav button{
-    margin: 0 5px;
-    background-color: white;
+    margin: 30px 5px;
+    height: 30px;
+}
+main{
+    display: flex;
+    justify-content: center;
+}
+main .right,main .left{
+    border: 1px solid red;
+    width: 30%;
+}
+footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
 }
