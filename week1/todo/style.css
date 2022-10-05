@@ -6,6 +6,11 @@ header {
     text-align: center;
     display: block;
 }
+body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 header h1{
     font-weight: bold;
     font-size: 30px;
@@ -46,11 +51,12 @@ main .left>ul>li,main .right>ul>li{
    border-bottom: 1px gray dashed;
    width: 600px;
    padding-bottom: 7px;
+   display: inline-block;
 }
-/* main .left>ul>i{
+main .left>ul>i,main .right>ul>i{
  position: relative;
- left:600px; 
-} */
+ right: 70px;
+}
 
 .right>h1,.left>h1{
     padding: 30px;
@@ -58,10 +64,13 @@ main .left>ul>li,main .right>ul>li{
 
 main .left> .text > input,main .right> .text > input{
    position: relative;
-   top: 350px; left: 20px;
+   top: 200px; left: 60px;
    height: 30px; width: 600px;
    border: none; border-bottom: 2px gray solid;
    outline: none;
+}
+main .text>i{
+    position: relative; top: 200px; left: 30px;
 }
 footer{
     position: absolute;
