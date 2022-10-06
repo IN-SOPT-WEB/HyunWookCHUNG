@@ -1,3 +1,34 @@
 body{
-    margin: 0px; padding: 0px;
+    margin: 0px auto; padding: 0px; width: 1024px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+}
+header .head_right span{
+    margin:0px 0.8rem;
+}
+header .head_right> span:nth-child(2){
+    border-radius: 30px; border: 1px solid black;padding:3px 8px;
+}
+header .head_right img{
+    border-radius: 50%; width: 40px;
+    position: relative; top: 0.7rem;
+}
+nav{
+    display: flex; justify-content:space-between;
+}
+nav span{
+    padding: 0px 0.8rem;
+}
+nav button{
+    border: none; background-color: white;
+    font-size: 120%; margin: 0px 0.7rem; color: gray;
+}
+nav .nav_left button:nth-child(1){
+    border-bottom: 3px solid black;
+    padding-bottom:8px; color: black;
+}
+nav .nav_left{
+
 }
