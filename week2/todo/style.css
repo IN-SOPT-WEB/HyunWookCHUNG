@@ -69,7 +69,7 @@ main .left> .text > input,main .right> .text > input{
    border: none; border-bottom: 2px gray solid;
    outline: none;
 }
-.add-btn{
+#add-tomorrow, #add-today{
     position: relative; top: 200px; left: 30px;
 }
 footer{
