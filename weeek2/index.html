@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to do list</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/e327aa4fae.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <header>TO DO List</header>
+
+    <nav>
+      <button id="view-today">View to day</button>
+      <button id="view-tomorrow">View tomorrow</button>
+      <button id="view-together">View together</button>
+    </nav>
+
+    <main>
+      <section class="left">
+        <h1>오늘 할 일</h1>
+        <div class="todo-wrapper">
+          <ul id="list-today"></ul>
+
+          <article>
+            <input type="text" id="input-today" />
+            <button id="add-today">
+              <i class="fa-sharp fa-solid fa-plus"></i>
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <section class="right">
+        <h1>내일 할 일</h1>
+
+        <div class="todo-wrapper">
+          <ul id="list-tomorrow"></ul>
+
+          <article>
+            <input type="text" id="input-tomorrow" />
+            <button id="add-tomorrow">
+              <i class="fa-sharp fa-solid fa-plus"></i>
+            </button>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>copyrightⓒhyun wook</footer>
+  </body>
+</html>
