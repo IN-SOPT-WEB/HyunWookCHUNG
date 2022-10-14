@@ -96,9 +96,13 @@
 //   });
 // }
 
+// 변수를 선언해서 document 에서 js 를 사용할수 있는 환경 구축//
+
 const todayInputBox = document.querySelector("#input-today");
 const todayButton = document.querySelector("#add-today");
 const todayList = document.querySelector("#list-today");
+
+//
 
 todayButton.addEventListener("click", function () {
   const newElement = document.createElement("li");
@@ -122,4 +126,32 @@ tomorrowButton.addEventListener("click", function () {
   tomorrowList.appendChild(tomorrowLi);
   tomorrowLi.innerText = inputTomorrow.value;
   inputTomorrow.value = "";
+
+  const tomorrowDelete = document.createElement("button");
+  tomorrowLi.appendChild(tomorrowDelete);
+  tomorrowDelete.addEventListener("click", function () {
+    tomorrowLi.remove();
+  });
+});
+// 배운걸 토대로 하루보기 만 도전-//
+
+const viewToday = document.querySelector("#view-today");
+const viewTomorrow = document.querySelector("#view-tomorrow");
+const viewTogether = document.querySelector("#view-together");
+const left = document.querySelector(".left");
+const right = document.querySelector(".right");
+
+viewToday.addEventListener("click", function () {
+  right.classList.add("hidden");
+  left.classList.remove("hidden");
+});
+
+viewTomorrow.addEventListener("click", function () {
+  left.classList.add("hidden");
+  right.classList.remove("hidden");
+});
+
+viewTogether.addEventListener("click", function () {
+  left.classList.remove("hidden");
+  right.classList.remove("hidden");
 });
