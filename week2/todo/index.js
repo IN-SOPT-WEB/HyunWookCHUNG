@@ -1,53 +1,157 @@
-document.getElementsByClassName('nav-goToday')[0].addEventListener('click',function(){
-    document.getElementsByClassName('right')[0].classList.add('hidden');
-    document.getElementsByClassName('left')[0].classList.remove('hidden');
+// const todayInput = document.querySelector("#input-today");
+// const todayTodoList = document.querySelector("#list-today");
+// const todayTodoAddButton = document.querySelector("#add-today");
 
-})
+// const tomorrowInput = document.querySelector("#input-tomorrow");
+// const tomorrowTodoList = document.querySelector("#list-tomorrow");
+// const tomorrowTodoAddButton = document.querySelector("#add-tomorrow");
 
-document.getElementsByClassName('nav-goTomorrow')[0].addEventListener('click',function(){
-    document.getElementsByClassName('left')[0].classList.add('hidden');
-    document.getElementsByClassName('right')[0].classList.remove('hidden');
+// const viewTodayButton = document.querySelector("#view-today");
+// const viewTomorrowButton = document.querySelector("#view-tomorrow");
+// const viewTogetherButton = document.querySelector("#view-together");
 
-})
+// const leftSection = document.querySelector(".left");
+// const rightSection = document.querySelector(".right");
 
-document.getElementsByClassName('go-togeter')[0].addEventListener('click',function(){
-    document.getElementsByClassName('left')[0].classList.remove('hidden');
-    document.getElementsByClassName('right')[0].classList.remove('hidden');
+// let id = 0;
 
-})
+// function initTodo() {
+//   todayTodoAddButton.addEventListener("click", function () {
+//     addTodo(todayInput.value, todayTodoList);
+//   });
+//   todayInput.addEventListener("keypress", function (e) {
+//     console.log(todayInput);
+//     return e.key === "Enter" ? addTodo(todayInput.value, todayTodoList) : null;
+//   });
+//   tomorrowTodoAddButton.addEventListener("click", function () {
+//     addTodo(tomorrowInput.value, tomorrowTodoList);
+//   });
+//   tomorrowInput.addEventListener("keypress", function (e) {
+//     return e.key === "Enter"
+//       ? addTodo(tomorrowInput.value, tomorrowTodoList)
+//       : null;
+//   });
+//   viewTodayButton.addEventListener("click", function () {
+//     controlSection("view-today");
+//   });
+//   viewTomorrowButton.addEventListener("click", function () {
+//     controlSection("view-tomorrow");
+//   });
+//   viewTogetherButton.addEventListener("click", function () {
+//     controlSection("view-together");
+//   });
+// }
 
-// 1. 코드를 가독성을 높이는 법. 
-// 2. 변수 설정하는 법. 중요
-// 3. 함수 설정하는 법. 중요
-// 4. 반복문 설정하는 법.
-// 5. js가 브라우저를 어떻게 다루는지.
-// 6. defer 그냥 외워..!
-// 7. 자바스크립트가 돔을 어떻게 다루는지 물어보면 좋을거 같다^^*;;
+// initTodo();
 
+// function removeTodo(targetNode) {
+//   todayTodoList.removeChild(targetNode);
+// }
 
-const button = document.getElementById('add-today');
-const input = document.getElementById('input-today');
-const list = document.getElementById('list-today');
+// function controlSection(buttonName) {
+//   if (buttonName === "view-today") {
+//     leftSection.classList.remove("hidden");
+//     rightSection.classList.add("hidden");
+//   } else if (buttonName === "view-tomorrow") {
+//     rightSection.classList.remove("hidden");
+//     leftSection.classList.add("hidden");
+//   } else {
+//     rightSection.classList.remove("hidden");
+//     leftSection.classList.remove("hidden");
+//   }
+// }
 
-const button2 = document.getElementById('add-tomorrow');
-const input2 = document.getElementById('input-tomorrow');
-const list2 = document.getElementById('list-tomorrow');
+// function addTodo(todoText, date) {
+//   if (!todoText) {
+//     return alert("아무거나 적어주세요");
+//   }
+//   // ------------ 리스트에 추가될 엘리먼트 ------------- //
+//   const li = document.createElement("li");
+//   const span = document.createElement("span");
+//   const button = document.createElement("button");
+//   const i = document.createElement("i"); // <i class="fa-regular fa-trash-can"></i>
+//   // ------------ 리스트에 추가될 엘리먼트 ------------- //
 
-button.addEventListener('click', clickButton);
+//   // ----------- 추가될 엘리먼트 속성 설정 --------- //
+//   i.setAttribute("class", "fa-regular fa-trash-can"); // i 태그에 클래스 이름 넣어서 아이콘으로 만들어주기
 
+//   span.innerText = todoText; // span 안에 input에 적힌 값 넣기
+//   // ----------- 추가될 엘리먼트 속성 설정 --------- //
 
-const cnt = 1;
+//   // ---------- 추가될 엘리먼트 들을 list에 삽입 ------------ //
+//   li.appendChild(span);
+//   li.appendChild(button);
+//   li.setAttribute("id", id++);
+//   button.appendChild(i);
 
-function clickButton() {
-  const temp = document.createElement('li');
-  temp.setAttribute("class", "list-group-item");
-  temp.setAttribute("id", "li"+cnt);
-  temp.innerHTML = input.value;
-  temp.innerHTML += "<button style='float: right;' class='btn btn-outline-secondary' type='button' onclick='remove("+cnt+")'>삭제</button>";
-  list.appendChild(temp);
-  cnt++;
-}
-function remove(cnt) {
-    const li = document.getElementById('li'+cnt);
-    list.removeChild(li);
-  }
+//   date.appendChild(li);
+//   // tomorrowTodoList.appendChild(li);
+//   // ---------- 추가될 엘리먼트 들을 list에 삽입 ------------ //
+
+//   // ----------- 적어놓은 값 초기화 ------------ //
+//   todo.value = "";
+
+//   button.addEventListener("click", function (e) {
+//     removeTodo(e.target.parentNode);
+//   });
+// }
+
+// 변수를 선언해서 document 에서 js 를 사용할수 있는 환경 구축//
+
+const todayInputBox = document.querySelector("#input-today");
+const todayButton = document.querySelector("#add-today");
+const todayList = document.querySelector("#list-today");
+
+//
+
+todayButton.addEventListener("click", function () {
+  const newElement = document.createElement("li");
+  todayList.appendChild(newElement);
+  newElement.innerText = todayInputBox.value;
+  todayInputBox.value = "";
+
+  const todayDelete = document.createElement("button");
+  newElement.appendChild(todayDelete);
+  todayDelete.addEventListener("click", function () {
+    newElement.remove();
+  });
+});
+
+const inputTomorrow = document.querySelector("#input-tomorrow");
+const tomorrowButton = document.querySelector("#add-tomorrow");
+const tomorrowList = document.querySelector("#list-tomorrow");
+
+tomorrowButton.addEventListener("click", function () {
+  const tomorrowLi = document.createElement("li");
+  tomorrowList.appendChild(tomorrowLi);
+  tomorrowLi.innerText = inputTomorrow.value;
+  inputTomorrow.value = "";
+
+  const tomorrowDelete = document.createElement("button");
+  tomorrowLi.appendChild(tomorrowDelete);
+  tomorrowDelete.addEventListener("click", function () {
+    tomorrowLi.remove();
+  });
+});
+// 배운걸 토대로 하루보기 만 도전-//
+
+const viewToday = document.querySelector("#view-today");
+const viewTomorrow = document.querySelector("#view-tomorrow");
+const viewTogether = document.querySelector("#view-together");
+const left = document.querySelector(".left");
+const right = document.querySelector(".right");
+
+viewToday.addEventListener("click", function () {
+  right.classList.add("hidden");
+  left.classList.remove("hidden");
+});
+
+viewTomorrow.addEventListener("click", function () {
+  left.classList.add("hidden");
+  right.classList.remove("hidden");
+});
+
+viewTogether.addEventListener("click", function () {
+  left.classList.remove("hidden");
+  right.classList.remove("hidden");
+});
