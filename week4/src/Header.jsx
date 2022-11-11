@@ -58,6 +58,7 @@ const SearchBlock = styled.input`
   font-size: 1.5rem;
   /* display: inline-block; */
   margin-bottom: 1.5rem;
+  padding: 0 10px;
 `;
 const SearchButton = styled.button`
   width: 3rem;
