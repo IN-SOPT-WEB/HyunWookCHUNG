@@ -1,18 +1,17 @@
 import axios from "axios";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+import styled from "styled-components";
+import Content from "./Content";
+import Header from "./Header";
+import Router from "./Router";
 
-async function getGithubProfile() {
-  const response = await axios.get(
-    "https://api.github.com/users/hyunwookCHUNG"
-  );
-  console.log("data", response.data);
-}
+const App = () => {
+  const [click, setClick] = useState("검색해주세요!");
 
-function App() {
-  useEffect(() => {
-    getGithubProfile();
-  }, []);
-  return <div className="App">뇸!</div>;
-}
-
+  return <Router />;
+};
 export default App;
+
+const MainBlock = styled.div`
+  margin: 2rem auto 1rem auto;
+`;
