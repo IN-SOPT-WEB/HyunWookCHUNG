@@ -10,7 +10,7 @@
       src="https://kit.fontawesome.com/e327aa4fae.js"
       crossorigin="anonymous"
     ></script>
-    <script src="./script.js"></script>
+    <script defer src="./script.js"></script>
     <title>WOOKLOG</title>
   </head>
   <body>
@@ -33,7 +33,7 @@
         <button>
           <span><i class="fa-regular fa-clock"></i></span>최신
         </button>
-        <button>
+        <button class="dropdown-button">
           이번 주<span><i class="fa-solid fa-arrow-down"></i></span>
         </button>
       </section>
@@ -43,6 +43,15 @@
         </button>
       </section>
     </nav>
+    <article>
+      <ul class="dropdown-box hidden">
+        <li class="box-list">정</li>
+        <li class="box-list">현</li>
+        <li class="box-list">욱</li>
+        <li class="box-list">짱</li>
+      </ul>
+    </article>
+
     <main>
       <section>
         <article>
